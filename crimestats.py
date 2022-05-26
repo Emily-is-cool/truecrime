@@ -24,5 +24,5 @@ plt.title('This Can Not Be Happening!:', fontsize = 15)
 plt.xlabel('This one thing')
 plt.ylabel('This other thing')
 
-plt.plot(calldata['Initial Call Type'].count(), calldata['Precinct'])
-plt.savefig("precinctcallcount.png")
+plt.plot(calldata['Precinct'], calldata['Initial Call Type'])
+plt.savefig("precinctcalls.png")
