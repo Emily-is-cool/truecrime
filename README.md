@@ -1,20 +1,20 @@
 # truecrime
-##SPD crime data Jan 1 - May 13, 2022
+<h3>D crime data Jan 1 - May 13, 2022</h3
 
-Just messing around with the bare basics here.
+Just messing around with the bare basics here. I don't know why my text is getting smaller as it goes down the page, but yes, I am aware. 
 The data file is taken from Seattle.gov/police/information-and-data/public-data-sets
 and is the 911 incident response csv file. 
 
 https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy
 The following are examples of code and the data it produced. Much of this was done on the full .csv file. The portion in the .csv file loaded here is only this year's data for managability reasons. 
 
-##Column names:
-
+ <h3>Column names:</h3>
+<pre>
 print('column names: ', column_names)
 Column Names Are:  ['Event Clearance Description', 'Call Type', 'Priority', 'Initial Call Type', 'Final Call Type', 'Original Time Queued', 'Arrived Time', 'Precinct', 'Sector', 'Beat']
 <class 'pandas.core.frame.DataFrame'>
-##Call Data Info:
-
+<h3>Call Data Info:</h3>
+<pre>
 print(calldata.info())
 
  0   CAD Event Number             int64
@@ -30,8 +30,8 @@ print(calldata.info())
  10  Beat                         object
 dtypes: int64(2), object(9)
 
-##This is the totals given for each type of call in the final call type:
-
+<h3>This is the totals given for each type of call in the final call type:</h3>
+<pre>
 print(calldata.groupby('Final Call Type') ['Final Call Type'].count())
 Final Call Type
 --ALARM-COMM (INC BANK, ATM, SCHOOLS, BSN)         72096
@@ -46,8 +46,9 @@ WEAPN - GUN,DEADLY WPN (NO THRTS/ASLT/DIST)          507
 WEAPN-IP/JO-GUN,DEADLY WPN (NO THRT/ASLT/DIST)       281
 WIRES DOWN (PHONE, ELECTRICAL,ETC.)                  148
 Name: Final Call Type, Length: 428, dtype: int64
-
-##This is just for the purpose of seeing how the time data was displayed:
+<pre>
+ 
+<h3>This is just for the purpose of seeing how the time data was displayed:</h3>
 print(calldata['Original Time Queued'].head(10))
 0    07/30/2013 09:05:36 PM
 1    06/08/2020 09:10:46 AM
@@ -60,8 +61,9 @@ print(calldata['Original Time Queued'].head(10))
 8    10/31/2011 10:36:17 AM
 9    08/15/2012 07:45:51 AM
 Name: Original Time Queued, dtype: object
-
-##Seeing how many calls there were of each priority: 
+<pre>
+ 
+<h3>Seeing how many calls there were of each priority:</h3> 
 print(calldata.groupby('Priority') ['Priority'].count())
 Priority
 -1        644
@@ -75,3 +77,4 @@ Priority
  8          4
  9     211498
 Name: Priority, dtype: int64
+<pre>
